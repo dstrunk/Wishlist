@@ -13,7 +13,7 @@ class Idea extends Model
 
     public function ideaList()
     {
-        return $this->belongsTo(WishList::class);
+        return $this->belongsTo(Wishlist::class);
     }
 
     public function priceInDollars()

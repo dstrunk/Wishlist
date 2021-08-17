@@ -2,21 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\WishList;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
-class WishListController extends Controller
+class WishlistController extends Controller
 {
     public function index()
     {
-        return view('wishlist.index', [
-            'lists' => WishList::all(),
+        return Inertia::render('Wishlist/Index', [
+            'lists' => Wishlist::all(),
         ]);
     }
 
-    public function show(WishList $list)
+    public function show(Wishlist $list)
     {
-        return view('wishlist.show', [
+        return Inertia::render('Wishlist/Show', [
             'list' => $list,
         ]);
     }

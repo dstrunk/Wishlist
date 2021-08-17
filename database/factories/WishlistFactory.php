@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\WishList;
+use App\Models\Wishlist;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class WishListFactory extends Factory
+class WishlistFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = WishList::class;
+    protected $model = Wishlist::class;
 
     /**
      * Define the model's default state.
