@@ -21,6 +21,9 @@ class WishlistFactory extends Factory
      */
     public function definition()
     {
-        return [];
+        return [
+            'name' => $this->faker->name,
+            'description' => $this->faker->sentence,
+        ];
     }
 }

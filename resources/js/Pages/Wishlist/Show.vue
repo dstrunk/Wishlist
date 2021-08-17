@@ -52,7 +52,7 @@
             Added
             <time datetime="{{ idea.created_at }}">{{
               formatDistance(new Date(idea.created_at), new Date())
-            }}</time>
+            }}</time> ago
           </div>
 
           <div v-if="idea.price">${{ priceInDollars(idea.price) }}</div>

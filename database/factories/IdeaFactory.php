@@ -21,6 +21,12 @@ class IdeaFactory extends Factory
      */
     public function definition()
     {
-        return [];
+        return [
+            'name' => $this->faker->name,
+            'price' => 999,
+            'brand' => $this->faker->name,
+            'description' => $this->faker->sentence,
+            'url' => $this->faker->url,
+        ];
     }
 }

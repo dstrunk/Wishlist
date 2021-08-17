@@ -15,9 +15,4 @@ class Idea extends Model
     {
         return $this->belongsTo(Wishlist::class);
     }
-
-    public function priceInDollars()
-    {
-        return number_format(((float) $this->price / 100), 2, '.', '');
-    }
 }
