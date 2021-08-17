@@ -17,8 +17,10 @@
     <div>
       <div v-if="list.ideas">
         <a
-          class="mt-8"
-          :href="route(idea.url)"
+          v-for="idea in list.ideas"
+          :key="idea.id"
+          :href="idea.url"
+          class="block mt-8"
           target="_blank"
           rel="noopener nofollow"
         >
@@ -53,7 +55,7 @@
             }}</time>
           </div>
 
-          <div v-if="idea.price">${{ idea.price }}</div>
+          <div v-if="idea.price">${{ priceInDollars(idea.price) }}</div>
 
           <p v-if="idea.description">{{ idea.description }}</p>
         </a>
@@ -80,8 +82,13 @@ export default {
   },
 
   setup() {
+    const priceInDollars = (price) => {
+      return (price / 100).toFixed(2);
+    };
+
     return {
       formatDistance,
+      priceInDollars,
     };
   },
 };

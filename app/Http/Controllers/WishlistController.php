@@ -18,7 +18,7 @@ class WishlistController extends Controller
     public function show(Wishlist $list)
     {
         return Inertia::render('Wishlist/Show', [
-            'list' => $list,
+            'list' => $list->load('ideas'),
         ]);
     }
 
